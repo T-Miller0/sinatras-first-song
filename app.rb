@@ -16,6 +16,12 @@ get '/about' do
   "About me"
 end
 
-get '/cat' do
-  '<img src="http://bit.ly/1eze8aE" style="border:5px solid maroon; padding:10px">'
+get '/random-cat' do
+  @names = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @names = params[:name]
+  erb(:index)
 end
